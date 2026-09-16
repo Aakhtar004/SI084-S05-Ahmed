@@ -37,8 +37,12 @@ Juice Shop y el portal respondieron HTTP 200. Nmap encontró cuatro hosts en `au
 - `20_evidencia/E05_app/01_juiceshop_real.png`: carga inicial con bienvenida.
 - `20_evidencia/E05_app/02_juiceshop_portada_real.png`: portada sin ventanas emergentes.
 - `20_evidencia/E05_app/03_wordpress_instalacion_real.png`: instalador del portal WordPress. La imagen demuestra que el contenedor responde, no una instalación configurada.
+- `20_evidencia/E05_wazuh/01_wazuh_login_real.png`: inicio de sesión del dashboard local.
+- `20_evidencia/E05_wazuh/02_wazuh_panel_ingreso_real.png`: resumen autenticado con un agente activo.
+- `20_evidencia/E05_wazuh/03_wazuh_alertas_reales.png`: vista Threat Hunting > Events.
+- `20_evidencia/E05_wazuh/04_wazuh_eventos_detalle_real.png`: filas de alertas 31164 y 31106 del agente testigo.
 
-Las tres imágenes fueron tomadas el 2026-09-16 desde un navegador automatizado que visitó los servicios locales reales. El control directo del escritorio Windows no estuvo disponible: Computer Use informó que no encontró la conexión nativa (`os error 2`).
+Las siete imágenes fueron tomadas el 2026-09-16 desde un navegador automatizado que visitó los servicios locales reales. El control directo del escritorio Windows no estuvo disponible: Computer Use informó que no encontró la conexión nativa (`os error 2`).
 
 ## Transferencia
 

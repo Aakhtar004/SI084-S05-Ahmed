@@ -14,4 +14,4 @@ Wazuh 4.9.0 está activo con manager, indexer y dashboard en `https://127.0.0.1:
 
 Las alertas de D-02 prueban detección de solicitudes de prueba en logs Apache. No prueban explotación ni bloqueo del ataque. La falta de alerta en D-01 se limita a la configuración ensayada.
 
-**Evidencia:** `20_evidencia/E05_wazuh/` (eventos, alertas JSONL, Nmap, resultado D01 y resumen MTTD), `30_papeles_trabajo/PT05-D-mttd.csv`, `docs/evidencias/S05/salidas/wazuh_config_alertas.txt`. **Fecha:** 2026-09-16 UTC. **Revisión:** pendiente.
+**Evidencia:** `20_evidencia/E05_wazuh/` (eventos, alertas JSONL, Nmap, resultado D01, resumen MTTD y cuatro capturas reales del dashboard), `30_papeles_trabajo/PT05-D-mttd.csv`, `docs/evidencias/S05/salidas/wazuh_config_alertas.txt`. **Fecha:** 2026-09-16 UTC. **Revisión:** pendiente.

@@ -52,8 +52,8 @@ def table(headers, rows, widths):
     return result
 
 
-def screenshot(filename, caption):
-    path = ROOT / "20_evidencia/E05_app" / filename
+def screenshot(filename, caption, folder="E05_app"):
+    path = ROOT / "20_evidencia" / folder / filename
     with PILImage.open(path) as im:
         width, height = im.size
     max_width = 17.3 * cm
@@ -72,7 +72,7 @@ story = [
     para("<b>Estudiante:</b> Ahmed Hasan Akhtar Oviedo<br/><b>Código:</b> 2022074261<br/><b>Modalidad:</b> individual<br/><b>Fecha:</b> 16 de septiembre de 2026"),
     para("Este documento reúne todas las capturas obtenidas hasta este corte y enlaza los registros técnicos. Las imágenes provienen de un navegador automatizado conectado a los servicios locales reales. No son capturas del escritorio Windows."),
     para("1. Alcance y cadena de evidencia", "HeadES"),
-    para("El alcance quedó registrado antes de las pruebas en el commit 001493d. Las pruebas se limitaron a los contenedores locales de la red audit_net. Las capturas y mediciones están en el commit local 8a7c1d0 y los hashes de 31 archivos constan en 20_evidencia/SHA256SUMS_E05.txt."),
+    para("El alcance quedó registrado antes de las pruebas en el commit 001493d. Las pruebas se limitaron a los contenedores locales de la red audit_net. Las mediciones están en el commit 8a7c1d0; las capturas adicionales de Wazuh se preservan en 20_evidencia/E05_wazuh/. Los hashes se registran en 20_evidencia/SHA256SUMS_E05.txt."),
     table(["Componente", "Evidencia"], [
         ("Aplicación", "Juice Shop en 127.0.0.1:3000; ZAP baseline y full"),
         ("Portal", "WordPress en 127.0.0.1:8082; pantalla de instalación"),
@@ -101,7 +101,27 @@ story.extend([
 story.extend(screenshot("03_wordpress_instalacion_real.png", "Figura 3. Captura real del navegador: selección de idioma en el instalador de WordPress. Archivo: 20_evidencia/E05_app/03_wordpress_instalacion_real.png."))
 story.extend([
     PageBreak(),
-    para("5. Resultados técnicos asociados", "HeadES"),
+    para("5. Captura 4 · Acceso a Wazuh", "HeadES"),
+    para("La pantalla de inicio de sesión confirma que el dashboard del laboratorio responde en https://127.0.0.1:8444. El certificado local es autofirmado."),
+])
+story.extend(screenshot("01_wazuh_login_real.png", "Figura 4. Captura real del navegador: acceso al dashboard Wazuh. Archivo: 20_evidencia/E05_wazuh/01_wazuh_login_real.png.", "E05_wazuh"))
+story.extend([
+    PageBreak(),
+    para("6. Captura 5 · Resumen de Wazuh", "HeadES"),
+    para("Tras iniciar sesión, el panel muestra un agente activo y alertas de las últimas 24 horas. Los totales del panel incluyen otros eventos de configuración y no equivalen a las tres solicitudes marcadas."),
+])
+story.extend(screenshot("02_wazuh_panel_ingreso_real.png", "Figura 5. Captura real del panel autenticado: resumen de agentes y alertas. Archivo: 20_evidencia/E05_wazuh/02_wazuh_panel_ingreso_real.png.", "E05_wazuh"))
+story.extend([
+    PageBreak(),
+    para("7. Capturas 6 y 7 · Eventos del agente", "HeadES"),
+    para("La primera imagen muestra Threat Hunting > Events; la segunda, las filas del agente testigo con reglas 31106 y 31164. Las horas visibles están en la zona local del navegador."),
+])
+story.extend(screenshot("03_wazuh_alertas_reales.png", "Figura 6. Captura real: vista de eventos y distribución temporal de alertas. Archivo: 20_evidencia/E05_wazuh/03_wazuh_alertas_reales.png.", "E05_wazuh"))
+story.extend([PageBreak()])
+story.extend(screenshot("04_wazuh_eventos_detalle_real.png", "Figura 7. Captura real: filas de alerta SQLi y respuesta HTTP 200 del agente si084_portal_testigo. Archivo: 20_evidencia/E05_wazuh/04_wazuh_eventos_detalle_real.png.", "E05_wazuh"))
+story.extend([
+    PageBreak(),
+    para("8. Resultados técnicos asociados", "HeadES"),
     para("ZAP produjo reportes baseline y full para Juice Shop en HTML y JSON. La matriz de cinco alertas y su mapeo se conserva en 40_hallazgos/PT05_alertas_zap.csv. Las alertas requieren validación manual para sostener un hallazgo definitivo."),
     para("Nmap identificó los servicios de los cuatro contenedores de laboratorio: Juice Shop (3000), WordPress/Apache (80), MariaDB (3306) y PostgreSQL (5432). No hay inventario previo aprobado para calificar uno como servicio no inventariado."),
     para("Wazuh recibió el registro Apache del portal mediante el agente 001. Tres solicitudes de prueba marcadas e05_01, e05_02 y e05_03 produjeron alertas reales del manager. Esta tabla transcribe los valores del CSV y JSONL originales; no representa una captura del panel."),
@@ -115,7 +135,7 @@ story.extend([
     para("En la repetición de Nmap con el agente activo no apareció alerta de escaneo en la ventana de observación más 20 segundos. El correo de alertas estaba desactivado y no se demostró inmutabilidad o retención de registros."),
     para("La restauración restic de la base ERP de prueba tomó 2,42 segundos, con SHA-256 original y restaurado idénticos. La revisión restic check --read-data terminó sin errores. No se aportaron objetivos RTO/RPO para comparar el resultado."),
     para("<b>Rutas de respaldo:</b> 20_evidencia/E05_app/zap_*.{html,json}; 20_evidencia/E05_infra/; 20_evidencia/E05_wazuh/alertas_prueba.jsonl; 30_papeles_trabajo/PT05-D-mttd.csv; 30_papeles_trabajo/PT05-B.md, PT05-C.md y PT05-D.md."),
-    para("<b>Captura del panel Wazuh:</b> no disponible en este corte. Computer Use no pudo conectarse a Windows (os error 2) y el navegador de prueba rechazó el certificado local autofirmado del dashboard. Las alertas se verificaron directamente en el manager y se preservaron en JSONL."),
+    para("<b>Panel Wazuh:</b> las figuras 4 a 7 son capturas reales del dashboard local. Las alertas también se verificaron directamente en el manager y se preservaron en JSONL. Computer Use no pudo conectarse al escritorio Windows (os error 2), pero el navegador automatizado sí pudo capturar el panel."),
 ])
 
 
