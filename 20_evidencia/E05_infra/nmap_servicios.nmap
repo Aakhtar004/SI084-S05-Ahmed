@@ -1,0 +1,21 @@
+# Nmap 7.98 scan initiated Wed Sep 16 21:36:49 2026 as: /usr/bin/nmap -sV -sC --open -p 80,443,3000,3306,5432,8082,8443 -oA /out/nmap_servicios 172.24.0.2 172.24.0.5 172.24.0.4 172.24.0.3
+Nmap scan report for si084_portal.audit_net (172.24.0.5)
+Host is up (0.00010s latency).
+Not shown: 6 closed tcp ports (reset)
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.68 ((Debian))
+|_http-trane-info: Problem with XML parsing of /evox/about
+|_http-server-header: Apache/2.4.68 (Debian)
+| http-title: WordPress &rsaquo; Installation
+|_Requested resource was http://si084_portal.audit_net/wp-admin/install.php
+MAC Address: D6:F9:63:80:D2:75 (Unknown)
+
+Nmap scan report for si084_db.audit_net (172.24.0.4)
+Host is up (0.000064s latency).
+Not shown: 6 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+5432/tcp open  postgresql PostgreSQL DB 9.6.0 or later
+MAC Address: FA:8D:3E:0B:AF:74 (Unknown)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Sep 16 21:37:00 2026 -- 4 IP addresses (4 hosts up) scanned in 10.70 seconds

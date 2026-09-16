@@ -1,0 +1,6 @@
+# Nmap 7.98 scan initiated Wed Sep 16 21:36:49 2026 as: /usr/bin/nmap -sV -sC --open -p 80,443,3000,3306,5432,8082,8443 -oA /out/nmap_servicios 172.24.0.2 172.24.0.5 172.24.0.4 172.24.0.3
+Host: 172.24.0.5 (si084_portal.audit_net)	Status: Up
+Host: 172.24.0.5 (si084_portal.audit_net)	Ports: 80/open/tcp//http//Apache httpd 2.4.68 ((Debian))/	Ignored State: closed (6)
+Host: 172.24.0.4 (si084_db.audit_net)	Status: Up
+Host: 172.24.0.4 (si084_db.audit_net)	Ports: 5432/open/tcp//postgresql//PostgreSQL DB 9.6.0 or later/	Ignored State: closed (6)
+# Nmap done at Wed Sep 16 21:37:00 2026 -- 4 IP addresses (4 hosts up) scanned in 10.70 seconds

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.98 scan initiated Wed Sep 16 21:36:49 2026 as: /usr/bin/nmap -sV -sC -&#45;open -p 80,443,3000,3306,5432,8082,8443 -oA /out/nmap_servicios 172.24.0.2 172.24.0.5 172.24.0.4 172.24.0.3 -->
+<nmaprun scanner="nmap" args="/usr/bin/nmap -sV -sC -&#45;open -p 80,443,3000,3306,5432,8082,8443 -oA /out/nmap_servicios 172.24.0.2 172.24.0.5 172.24.0.4 172.24.0.3" start="1789594609" startstr="Wed Sep 16 21:36:49 2026" version="7.98" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="7" services="80,443,3000,3306,5432,8082,8443"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.3" addrtype="ipv4"/>
+<address addr="2E:65:D9:18:A6:76" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.4" addrtype="ipv4"/>
+<address addr="FA:8D:3E:0B:AF:74" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.5" addrtype="ipv4"/>
+<address addr="D6:F9:63:80:D2:75" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<hosthint><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.2" addrtype="ipv4"/>
+<address addr="BA:6D:C6:D2:1D:39" addrtype="mac"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1789594610" endtime="1789594620"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.5" addrtype="ipv4"/>
+<address addr="D6:F9:63:80:D2:75" addrtype="mac"/>
+<hostnames>
+<hostname name="si084_portal.audit_net" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="6">
+<extrareasons reason="reset" count="6" proto="tcp" ports="443,3000,3306,5432,8082,8443"/>
+</extraports>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" product="Apache httpd" version="2.4.68" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.68</cpe></service><script id="http-trane-info" output="Problem with XML parsing of /evox/about"/><script id="http-server-header" output="Apache/2.4.68 (Debian)"><elem>Apache/2.4.68 (Debian)</elem>
+</script><script id="http-title" output="WordPress &amp;rsaquo; Installation&#xa;Requested resource was http://si084_portal.audit_net/wp-admin/install.php"><elem key="title">WordPress &amp;rsaquo; Installation</elem>
+<elem key="redirect_url">http://si084_portal.audit_net/wp-admin/install.php</elem>
+</script></port>
+</ports>
+<times srtt="101" rttvar="782" to="100000"/>
+</host>
+<host starttime="1789594610" endtime="1789594620"><status state="up" reason="arp-response" reason_ttl="0"/>
+<address addr="172.24.0.4" addrtype="ipv4"/>
+<address addr="FA:8D:3E:0B:AF:74" addrtype="mac"/>
+<hostnames>
+<hostname name="si084_db.audit_net" type="PTR"/>
+</hostnames>
+<ports><extraports state="closed" count="6">
+<extrareasons reason="reset" count="6" proto="tcp" ports="80,443,3000,3306,8082,8443"/>
+</extraports>
+<port protocol="tcp" portid="5432"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="postgresql" product="PostgreSQL DB" version="9.6.0 or later" method="probed" conf="10"><cpe>cpe:/a:postgresql:postgresql</cpe></service></port>
+</ports>
+<times srtt="64" rttvar="713" to="100000"/>
+</host>
+<runstats><finished time="1789594620" timestr="Wed Sep 16 21:37:00 2026" summary="Nmap done at Wed Sep 16 21:37:00 2026; 4 IP addresses (4 hosts up) scanned in 10.70 seconds" elapsed="10.70" exit="success"/><hosts up="4" down="0" total="4"/>
+</runstats>
+</nmaprun>

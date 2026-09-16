@@ -1,0 +1,39 @@
+services:
+  juiceshop:
+    image: bkimminich/juice-shop:latest
+    container_name: si084_juiceshop
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks: [audit_net]
+  mariadb:
+    image: mariadb:11
+    container_name: si084_mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: lab_local_no_publicar
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: lab_local_no_publicar
+    networks: [audit_net]
+  portal:
+    image: wordpress:latest
+    container_name: si084_portal
+    depends_on: [mariadb]
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: lab_local_no_publicar
+      WORDPRESS_DB_NAME: wordpress
+    ports:
+      - "127.0.0.1:8082:80"
+    networks: [audit_net]
+  db:
+    image: postgres:16
+    container_name: si084_db
+    environment:
+      POSTGRES_USER: erp_app
+      POSTGRES_PASSWORD: lab_local_no_publicar
+      POSTGRES_DB: erp
+    networks: [audit_net]
+networks:
+  audit_net:
+    external: true

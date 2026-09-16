@@ -1,0 +1,14 @@
+# Nmap 7.98 scan initiated Wed Sep 16 21:39:21 2026 as: /usr/bin/nmap -sn -oN /out/nmap_hosts.txt 172.24.0.2 172.24.0.3 172.24.0.4 172.24.0.5
+Nmap scan report for si084_juiceshop.audit_net (172.24.0.2)
+Host is up (0.00013s latency).
+MAC Address: BA:6D:C6:D2:1D:39 (Unknown)
+Nmap scan report for si084_mariadb.audit_net (172.24.0.3)
+Host is up (0.00027s latency).
+MAC Address: 2E:65:D9:18:A6:76 (Unknown)
+Nmap scan report for si084_db.audit_net (172.24.0.4)
+Host is up (0.00015s latency).
+MAC Address: FA:8D:3E:0B:AF:74 (Unknown)
+Nmap scan report for si084_portal.audit_net (172.24.0.5)
+Host is up (0.000026s latency).
+MAC Address: D6:F9:63:80:D2:75 (Unknown)
+# Nmap done at Wed Sep 16 21:39:22 2026 -- 4 IP addresses (4 hosts up) scanned in 0.62 seconds
