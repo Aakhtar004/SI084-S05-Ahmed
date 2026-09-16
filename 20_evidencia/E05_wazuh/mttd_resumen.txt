@@ -1,0 +1,1 @@
+MTTD medido: 3.318 segundos sobre 3 eventos; precisión del log fuente: 1 segundo.

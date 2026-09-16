@@ -1,0 +1,6 @@
+T0_UTC=2026-09-16T22:12:22.2427505Z
+URL=http://127.0.0.1:8082/wp-admin/install.php?id=%27
+HTTP=200
+T0_UTC=2026-09-16T22:13:03.5642518Z URL=http://127.0.0.1:8082/wp-admin/install.php?id=%27&audit=e05_01 HTTP=200
+T0_UTC=2026-09-16T22:13:05.1103680Z URL=http://127.0.0.1:8082/wp-admin/install.php?id=1%20union%20select%201,2&audit=e05_02 HTTP=200
+T0_UTC=2026-09-16T22:13:08.0357571Z URL=http://127.0.0.1:8082/wp-admin/install.php?id=%3Cscript%3Ealert(1)%3C%2Fscript%3E&audit=e05_03 HTTP=200

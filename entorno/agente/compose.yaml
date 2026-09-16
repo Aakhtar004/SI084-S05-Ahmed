@@ -1,0 +1,16 @@
+services:
+  agente_portal:
+    build: .
+    container_name: si084_agente_portal
+    hostname: si084_portal_testigo
+    volumes:
+      - ../../20_evidencia/E05_wazuh/portal_access.log:/var/log/si084_portal_access.log:ro
+    networks:
+      - audit_net
+      - wazuh_net
+networks:
+  audit_net:
+    external: true
+  wazuh_net:
+    external: true
+    name: single-node_default

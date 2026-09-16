@@ -1,0 +1,4 @@
+Ventana UTC: 2026-09-16T22:14:24.941310+00:00 a 2026-09-16T22:14:54.503628+00:00
+Alertas del agente 001: 0
+Alertas de escaneo/reconocimiento: 0
+Interpretación: si no hay alerta de escaneo, el control actual no detectó esta prueba de Nmap.

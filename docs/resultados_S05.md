@@ -17,7 +17,7 @@ El alcance se registró en el commit `001493d9a2771388d3c3390bdded28b3afcbe458` 
 | 3 | Cinco alertas mapeadas | Cinco correspondencias registradas; validación manual pendiente | `40_hallazgos/PT05_alertas_zap.csv` |
 | 4 | Nmap y contraste | Escaneo realizado; inventario organizacional no aportado | `20_evidencia/E05_infra/nmap_*`; `30_papeles_trabajo/PT05-B.md` |
 | 5 | Servicio no inventariado con hallazgo | No demostrado sin inventario previo aprobado | `30_papeles_trabajo/PT05-B.md` |
-| 6 | Wazuh y D-01 a D-05 | Tres contenedores levantados; panel local accesible en 8444; sin agente testigo ni MTTD | `30_papeles_trabajo/PT05-D.md` y salidas `wazuh_*` |
+| 6 | Wazuh y D-01 a D-05 | Agente 001 activo; tres alertas web reales; MTTD 3,318 s; Nmap sin alerta | `30_papeles_trabajo/PT05-D.md`; `20_evidencia/E05_wazuh/` |
 | 7 | Restauración con tiempo y hash | Logrado en base de prueba: 2,42 s, SHA-256 idéntico | `30_papeles_trabajo/PT05-C.md`; `20_evidencia/E05_infra/` |
 | 8 | Cadena de custodia y commit | Hashes y commits existentes; resellado necesario tras archivos nuevos | `20_evidencia/SHA256SUMS_E05.txt` y `git log` |
 
@@ -30,7 +30,15 @@ Juice Shop y el portal respondieron HTTP 200. Nmap encontró cuatro hosts en `au
 - La entrega es individual; el estudiante y código están identificados. Falta saber qué número de grupo exige el aula virtual para el nombre final `SI084-S05-TALLER-Grupo<N>.pdf`.
 - La firma del docente para el alcance y las actas no fue proporcionada.
 - La descarga y el análisis activo excedieron la ventana de cinco minutos solicitada; ambos reportes ZAP quedaron generados.
-- Los contenedores Wazuh figuran `Up`. El puerto 443 respondió desde Apache de Windows, ajeno al dashboard. Se publicó el dashboard en `https://127.0.0.1:8444` y se verificó su redirección HTTP 302 al inicio de sesión. Falta conectar un agente testigo y medir D-01 a D-05.
+- Los contenedores Wazuh figuran `Up`. El puerto 443 respondió desde Apache de Windows, ajeno al dashboard. El dashboard local responde en `https://127.0.0.1:8444`. Se conectó un agente testigo al portal, se midió D-01 a D-05 y se registraron límites de notificación y retención.
+
+## Capturas reales del navegador
+
+- `20_evidencia/E05_app/01_juiceshop_real.png`: carga inicial con bienvenida.
+- `20_evidencia/E05_app/02_juiceshop_portada_real.png`: portada sin ventanas emergentes.
+- `20_evidencia/E05_app/03_wordpress_instalacion_real.png`: instalador del portal WordPress. La imagen demuestra que el contenedor responde, no una instalación configurada.
+
+Las tres imágenes fueron tomadas el 2026-09-16 desde un navegador automatizado que visitó los servicios locales reales. El control directo del escritorio Windows no estuvo disponible: Computer Use informó que no encontró la conexión nativa (`os error 2`).
 
 ## Transferencia
 
