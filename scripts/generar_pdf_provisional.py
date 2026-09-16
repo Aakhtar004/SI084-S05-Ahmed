@@ -57,6 +57,7 @@ story = []
 story.append(p("UNIVERSIDAD PRIVADA DE TACNA<br/>ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS", "TitleES"))
 story.append(p("SI-084 · Auditoría de Sistemas · Semana 05", "BodyES"))
 story.append(p("Informe provisional de evidencias implementadas", "TitleES"))
+story.append(p("<b>Entrega individual:</b> Ahmed Hasan Akhtar Oviedo · Código 2022074261"))
 story.append(p("Corte: 16 de septiembre de 2026. Este documento registra resultados observados hasta este momento. No sustituye el informe final en la plantilla obligatoria ni afirma que el taller esté terminado."))
 story.append(p("1. Alcance y trazabilidad", "SubES"))
 story.append(p("El alcance local se guardó en el commit <b>001493d</b> antes de iniciar pruebas. El usuario autorizó proceder en esta conversación. La firma del docente exigida por la guía todavía no se ha aportado. Los objetivos de escaneo se limitaron a la red Docker audit_net y a los servicios locales del laboratorio."))
@@ -99,7 +100,7 @@ story.append(table(["Control", "Resultado"], [
 story.append(p("Evidencia: 30_papeles_trabajo/PT05-C.md, 20_evidencia/E05_infra/tiempo_y_hash_restauracion.txt y restic_check.txt. La base usada es de prueba; esta medición no caracteriza una restauración de producción."))
 
 story.append(p("5. Estado de Wazuh y pendientes", "SubES"))
-story.append(p("Los contenedores de Wazuh 4.9.0 (manager, indexer y dashboard) fueron creados y figuran en estado Up. La consulta a https://127.0.0.1:443 devolvió una respuesta de Apache de Windows ajena al dashboard, por lo que no se considera verificado el acceso al panel. Aún no hay agente testigo, tabla D-01 a D-05 ni MTTD medido. También faltan inventario previo, firma del docente y datos del grupo para el PDF final."))
+story.append(p("Los contenedores de Wazuh 4.9.0 (manager, indexer y dashboard) figuran en estado Up. El puerto 443 llegó a otro Apache local. Se publicó el dashboard en https://127.0.0.1:8444 y se verificó su redirección HTTP 302 al inicio de sesión. PT05-D registra que no hay agente testigo ni MTTD medido, y que las notificaciones por correo están desactivadas. También faltan inventario previo, firma del docente y el número de grupo exigido para nombrar el PDF final."))
 story.append(p("Hashes del corte: 20_evidencia/SHA256SUMS_E05.txt. Los reportes nuevos requieren resellado."))
 
 def footer(canvas, doc):
