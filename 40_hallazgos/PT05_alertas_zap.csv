@@ -1,0 +1,11 @@
+﻿fuente,riesgo_zap,alerta,cwe,instancias,wstg,owasp_top10_2021,iso_27001_2022,validacion
+zap_full_juiceshop.json,Medium (High),CORS Misconfiguration,942,4,,,,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Medium (High),Content Security Policy (CSP) Header Not Set,693,3,WSTG-CONF-12,A05,A.8.9,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Medium (Medium),Cross-Domain Misconfiguration,264,4,WSTG-CLNT-07,A05,A.8.9,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Low (Medium),Cross-Origin-Embedder-Policy Header Missing or Invalid,693,3,,,,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Low (Medium),Cross-Origin-Opener-Policy Header Missing or Invalid,693,3,,,,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Low (Medium),Deprecated Feature Policy Header Set,16,3,,,,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Low (Low),Timestamp Disclosure - Unix,497,5,WSTG-INFO-05,A05,A.8.12,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Informational (Medium),Modern Web Application,-1,3,,,,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Informational (Medium),Storable and Cacheable Content,524,1,WSTG-ATHN-06,A05,A.8.12,Pendiente: comprobar exposición y relevancia para el dato concreto
+zap_full_juiceshop.json,Informational (Medium),Storable but Non-Cacheable Content,524,3,WSTG-ATHN-06,A05,A.8.12,Pendiente: comprobar exposición y relevancia para el dato concreto

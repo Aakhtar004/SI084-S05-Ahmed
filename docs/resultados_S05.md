@@ -11,13 +11,13 @@ El alcance se registró en el commit `001493d9a2771388d3c3390bdded28b3afcbe458` 
 | # | Resultado | Estado | Evidencia |
 |---|---|---|---|
 | 1 | Alcance previo | Parcial: commit previo, firma docente pendiente | `10_planificacion/alcance_E05.md` y `git log` |
-| 2 | ZAP baseline y full | Baseline generado; full en curso | `20_evidencia/E05_app/` |
-| 3 | Cinco alertas mapeadas | Pendiente del reporte full y revisión de criterios | `30_papeles_trabajo/` |
+| 2 | ZAP baseline y full | Ambos generados en HTML y JSON | `20_evidencia/E05_app/` |
+| 3 | Cinco alertas mapeadas | Cinco correspondencias registradas; validación manual pendiente | `40_hallazgos/PT05_alertas_zap.csv` |
 | 4 | Nmap y contraste | Escaneo realizado; inventario organizacional no aportado | `20_evidencia/E05_infra/nmap_*`; `30_papeles_trabajo/PT05-B.md` |
 | 5 | Servicio no inventariado con hallazgo | No demostrado sin inventario previo aprobado | `30_papeles_trabajo/PT05-B.md` |
-| 6 | Wazuh y D-01 a D-05 | Despliegue en curso; sin veredicto todavía | Pendiente |
+| 6 | Wazuh y D-01 a D-05 | Tres contenedores levantados; panel y detección sin verificar | `docs/evidencias/S05/salidas/wazuh_estado.txt` |
 | 7 | Restauración con tiempo y hash | Logrado en base de prueba: 2,42 s, SHA-256 idéntico | `30_papeles_trabajo/PT05-C.md`; `20_evidencia/E05_infra/` |
-| 8 | Cadena de custodia y commit | Pendiente del cierre de las pruebas | `20_evidencia/SHA256SUMS_E05.txt` |
+| 8 | Cadena de custodia y commit | Hashes y commits existentes; resellado necesario tras archivos nuevos | `20_evidencia/SHA256SUMS_E05.txt` y `git log` |
 
 Juice Shop y el portal respondieron HTTP 200. Nmap encontró cuatro hosts en `audit_net`: Juice Shop (3000), MariaDB (3306), ERP PostgreSQL (5432) y WordPress/Apache (80). No hubo servicios TLS en 443 u 8443. El respaldo restaurado coincide bit a bit con el original y restic no informó errores. No se puede comparar el tiempo observado con un RTO ni el punto recuperado con un RPO, porque no se proporcionaron objetivos declarados.
 
@@ -27,7 +27,8 @@ Juice Shop y el portal respondieron HTTP 200. Nmap encontró cuatro hosts en `au
 - La base ERP del ejercicio es una base de prueba creada en este entorno; la conclusión de restauración se limita a ella.
 - Faltan número de grupo, nombres y códigos de integrantes para completar la plantilla obligatoria y producir el PDF final `SI084-S05-TALLER-Grupo<N>.pdf`.
 - La firma del docente para el alcance y las actas no fue proporcionada.
-- El despliegue de Wazuh y el escaneo activo requieren más tiempo que la ventana de cinco minutos solicitada.
+- La descarga y el análisis activo excedieron la ventana de cinco minutos solicitada; ambos reportes ZAP quedaron generados.
+- Los contenedores Wazuh figuran `Up`, pero `https://127.0.0.1:443` respondió desde Apache de Windows, ajeno al dashboard. Falta resolver ese conflicto y medir D-01 a D-05.
 
 ## Transferencia
 
